@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import MicroAppView from '../views/MicroAppView.vue'
 import { RouterLayout } from '@/layouts'
@@ -15,14 +15,14 @@ const routes = [
     component: () => import('../views/AboutView.vue')
   },
   {
-    path: '/micro-app',
+    path: '/micro-app/:page*',
     name: 'microApp',
     component: MicroAppView
   },
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes: [
     {
       path: '/',

@@ -1,6 +1,6 @@
 <template>
   <div class="micro-app-container">
-  <micro-app name="abc" url="http://localhost:8081/"  /> 
+  <micro-app name="abc" url="http://localhost:8081/" baseroute='/#/micro-app/' /> 
 </div>
 </template>
 

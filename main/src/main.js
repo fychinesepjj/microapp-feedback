@@ -11,9 +11,12 @@ app.use(Antd)
 microApp.start({
   inline: true,
   "keep-alive": true,
-  "keep-router-state": true,
-  iframe: false
+  "keep-router-state": false,
+  'router-mode': 'native-scope',
+  iframe: true
 })
+
+window.$microApp = microApp
 
 app.mount('#app')
 

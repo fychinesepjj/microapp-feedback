@@ -3,7 +3,7 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link to="/micro-app">子应用</router-link>
+    <router-link to="/micro-app/about/">子应用</router-link>
   </nav>
   <router-view v-slot="{ Component }">
     <component :is="Component" />
@@ -12,7 +12,12 @@
 
 <script>
   export default {
-    name: 'DefaultLayout'
+    name: 'DefaultLayout',
+    methods: {
+      clearApp() {
+        window.$microApp.unmountApp('abc', { clearAliveState: true, destroy: false })
+      }
+    }
   }
 </script>
 
